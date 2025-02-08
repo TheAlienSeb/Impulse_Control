@@ -1,5 +1,5 @@
 const express = require('express')
-const db = require('./firebase'); // Firestore instance
+const db = require('./server/firebase'); // Firestore instance
 const cors = require('cors')
 
 const app = express()
