@@ -10,7 +10,7 @@ const index = () => {
             <Link href="/profile" style={{ color: "black" }}>
                 Go to Profile
             </Link>
-            <Link href="/finance" style={{ color: "black" }}>
+            <Link href="/screens/finance" style={{ color: "black" }}>
                 Go to Financial Assessment
             </Link>
             <Link href="/assessment" style={{ color: "black" }}>

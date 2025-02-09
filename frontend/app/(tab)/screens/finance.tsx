@@ -1,12 +1,15 @@
 import colors from "@/styles/globalVar";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
 const FinanceTab: React.FC = () => {
+    const router = useRouter();
+
     return (
         <View style={styles.container}>
             <View style={styles.spaceBetweenContainer}>
-                <Text style={styles.logo}>I</Text>
+                <Text style={styles.logo}>IMPUL$E</Text>
                 <Text style={styles.header}>
                     Let’s fully set up your account!
                 </Text>
@@ -17,14 +20,12 @@ const FinanceTab: React.FC = () => {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                        // Handle button press
+                        router.replace("/screens/question1");
                     }}
                 >
                     <Text style={styles.buttonText}>I'm ready 🡒</Text>
                 </TouchableOpacity>
             </View>
-
-            {/* Add more profile details here */}
         </View>
     );
 };
