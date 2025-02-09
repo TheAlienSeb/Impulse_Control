@@ -54,13 +54,31 @@ const Question2: React.FC = () => {
                 <Text style={styles.header}>
                     What are your biggest spending expenses?{" "}
                 </Text>
-                <View style={styles.itemContainer}>
-                    <FlatList
-                        data={DATA}
-                        renderItem={({ item }) => <Item title={item.title} />}
-                        keyExtractor={(item) => item.fontId}
-                    />
-                </View>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => {
+                        // Change the background color of the item on press
+                        DATA.map((item) => {
+                            if (item.title === "Technology") {
+                                return {
+                                    ...item,
+                                    backgroundColor: colors.secondaryColor,
+                                };
+                            }
+                            return item;
+                        });
+                    }}
+                >
+                    <View style={styles.itemContainer}>
+                        <FlatList
+                            data={DATA}
+                            renderItem={({ item }) => (
+                                <Item title={item.title} />
+                            )}
+                            keyExtractor={(item) => item.fontId}
+                        />
+                    </View>
+                </TouchableOpacity>
                 {/* <FontAwesomeIcon icon={faSquareCheck} /> */}
                 <TouchableOpacity
                     style={styles.button}
